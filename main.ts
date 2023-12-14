@@ -9,9 +9,8 @@ interface BodyVisitRequest {
   city: string
   flag: string
 }
-app.get("/", (c) => c.text("Hello Deno!"))
 
-app.get("/index.html", serveStatic({ path: "/index.html" }))
+app.get("/", serveStatic({ path: "/index.html" }))
 
 app.get("/counter", (c) => {
   return streamSSE(c, async (stream) => {
