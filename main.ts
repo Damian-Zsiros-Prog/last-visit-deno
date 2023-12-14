@@ -11,6 +11,7 @@ interface BodyVisitRequest {
 }
 
 app.get("/", serveStatic({ path: "/index.html" }))
+app.get("/style.css", serveStatic({ path: "/style.css" }))
 
 app.get("/counter", (c) => {
   return streamSSE(c, async (stream) => {
